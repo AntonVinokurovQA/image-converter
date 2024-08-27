@@ -34,7 +34,7 @@ foreach ($file in $files) {
     $outputFile = Join-Path $convertedDir $jpgFileName
 
     # Применяем команду ImageMagick для конвертации в JPG
-    magick "$($file.FullName)" -fuzz 10% -trim +repage -resize 1000x1000 -gravity center -background white -extent 1000x1000 "$outputFile"
+    magick "$($file.FullName)" -fuzz 10% -trim +repage -resize 1000x1000 -gravity center -background white -extent 1000x1000 -quality 85 -strip "$outputFile"
 
     # Увеличиваем индекс для следующего файла в той же папке
     $folderIndexes[$folderName]++
