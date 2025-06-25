@@ -1,37 +1,39 @@
 # Image Conversion PowerShell Script
 
-Этот скрипт PowerShell предназначен для конвертации изображений в формате PNG и WEBP в формат JPEG с определенными условиями. Он обрабатывает изображения, удаляет фон, изменяет размер до 1000x1000 пикселей и сохраняет результат в папку `converted`, используя имя исходной папки и индекс для уникальности имен файлов.
+This PowerShell script is designed to convert PNG and WEBP images to JPEG format with specific processing steps. It handles image background removal, resizes images to 1000x1000 pixels, and saves the output in a `converted` subfolder using the source folder name and an index to ensure unique filenames.
 
-## Особенности
+## Features
 
-- Обрабатывает файлы с расширениями `.png` и `.webp`.
-- Обрезает фон и изменяет размер изображений до 1000x1000 пикселей.
-- Сохраняет файлы в формате JPEG.
-- Нумерация файлов в каждой папке начинается с 1 и увеличивается для каждого файла.
-- Сохраняет результаты в поддиректории `converted` в каждой исходной папке.
+- Processes files with `.png` and `.webp` extensions.
+- Removes background and resizes images to 1000x1000 pixels.
+- Saves the output as JPEG files.
+- File numbering starts from 1 for each folder and increments per file.
+- Stores the results in a `converted` subdirectory inside each original folder.
 
-## Установка и запуск
+## Installation and Usage
 
-### 1. Установите ImageMagick
+### 1. Install ImageMagick
 
-Убедитесь, что у вас установлена утилита [ImageMagick](https://imagemagick.org) и добавлена в PATH вашей системы.
+Make sure you have [ImageMagick](https://imagemagick.org) installed and added to your system `PATH`.
 
-### 2. Подготовьте скрипт
+### 2. Prepare the Script
 
-1. Убедитесь, что скрипт `convert.ps1` находится в вашей рабочей директории. 
-2. Отредактируйте переменную `$basePath` в скрипте, указав путь к основной папке, содержащей изображения.
+1. Ensure the `convert.ps1` script is located in your working directory.  
+2. Edit the `$basePath` variable in the script to specify the path to the main folder containing your images.
 
-### 3. Запуск скрипта
+### 3. Run the Script
 
-1. Откройте PowerShell с правами администратора.
-2. Перейдите в директорию, где находится ваш скрипт, с помощью команды:
+1. Open PowerShell as Administrator.
+2. Navigate to the directory where the script is located using:
 
     ```powershell
-    cd <путь к папке с вашим скриптом>
+    cd <path to the folder with your script>
     ```
 
-3. Выполните скрипт командой:
+3. Execute the script:
 
     ```powershell
     .\convert.ps1
     ```
+
+The script will process all supported images and save the converted files in the
